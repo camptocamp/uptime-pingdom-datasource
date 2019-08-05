@@ -1,0 +1,33 @@
+<query-editor-row query-ctrl="ctrl" class="generic-datasource-query-row" has-text-edit-mode="true">
+  <div class="gf-form-inline">
+    <div class="gf-form">
+      <label class="gf-form-label query-keyword">
+        Filter by
+      </label>
+      <div class="gf-form-select-wrapper max-width-15">
+        <select
+          class="gf-form-input"
+          ng-model="ctrl.target.filterType"
+          ng-options="item for item in ctrl.filterTypes"
+          ng-change="ctrl.onChangeInternal()">
+        </select>
+      </div>
+    </div>
+
+    <div class="gf-form max-width-25">
+      <label class="gf-form-label query-keyword width-2">
+        =
+      </label>
+      <input
+        type="text"
+        class="gf-form-input"
+        spellcheck='false'
+        data-min-length=0
+        data-items=100
+        ng-model="ctrl.target.filterValue"
+        ng-model-onblur
+        ng-change="ctrl.onChangeInternal()">
+      </input>
+    </div>
+  </div>
+</query-editor-row>
